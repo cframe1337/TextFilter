@@ -124,10 +124,11 @@ def find_word(inp_msg: str, file: str) -> any:
     :param file:
     :return:
     """
-    
     with open(f'{file}', 'r', encoding='utf-8') as _f:
         _bl = re.split(r'[,\s]+', _f.read())
-        print(f"ConvertedToRu: {f.convert_to_ru(inp_msg, abc_db)}\n")  # Результат конвертации текста
+        print(
+            f"ConvertedToRu: {f.convert_to_ru(
+                inp_msg, abc_db)}\n")  # Результат конвертации текста
         for _w in _bl:
             if _w in f.convert_to_ru(inp_msg, abc_db):  # Если слово найдено
                 print(f"Found: {_w}")
