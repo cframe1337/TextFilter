@@ -1,3 +1,11 @@
+"""
+TextFilter: Модуль для фильтрации и преобразования транслитерированного текста.
+
+Этот модуль предоставляет функциональность для преобразования текста из транслита
+в обычный текст и поиска ключевых слов из заданного списка. Он может быть использован
+для модерации контента в социальных сетях или для поиска по ключевым словам.
+"""
+
 import re
 import sys
 import time
@@ -91,7 +99,7 @@ abc_db = [
         "b", "Ь", "ь", "6"
     ]},
     {"ы": {
-        "bI", "bl", "Ы", "Ы", "𝕓𝕝", "𝕓𝕀"
+        "bI", "bl", "Ы", "𝕓𝕝", "𝕓𝕀"
     }},
     {"ъ": [
         "ъ", "Ъ"
@@ -108,21 +116,29 @@ abc_db = [
 ]
 
 
-def detect_bad_word(inp_msg: str, file: str) -> any:
+def find_word(inp_msg: str, file: str) -> any:
+    """
+    detect_bad_word - основная функция для конвертации и нахождения слов из списка.
+
+    :param inp_msg:
+    :param file:
+    :return:
+    """
+    
     with open(f'{file}', 'r', encoding='utf-8') as _f:
         _bl = re.split(r'[,\s]+', _f.read())
-        print(f"ConvertedToRu: {f.convert_to_ru(inp_msg, abc_db)}\n")
+        print(f"ConvertedToRu: {f.convert_to_ru(inp_msg, abc_db)}\n")  # Результат конвертации текста
         for _w in _bl:
-            if _w in f.convert_to_ru(inp_msg, abc_db):
+            if _w in f.convert_to_ru(inp_msg, abc_db):  # Если слово найдено
                 print(f"Found: {_w}")
                 return True
         return False
 
 
 if __name__ == '__main__':
-    start_time = time.perf_counter()
-    print(f"Line: {sys.argv[1]}")
-    print(f"File: {sys.argv[2]}")
-    print(f"Result: {str(detect_bad_word(sys.argv[1], sys.argv[2]))}")
-    end_time = time.perf_counter()
-    print(f"Execution time: {end_time - start_time:.3f} seconds")
+    start_time = time.perf_counter()  # Тест скорости функции
+    print(f"Line: {sys.argv[1]}")  # Введенный текст
+    print(f"File: {sys.argv[2]}")  # Файл с ключевыми словами
+    print(f"Result: {str(find_word(sys.argv[1], sys.argv[2]))}")  # Вывод результата
+    end_time = time.perf_counter()  # Тест скорости функции
+    print(f"Execution time: {end_time - start_time:.3f} seconds")  # Результат теста скорости
