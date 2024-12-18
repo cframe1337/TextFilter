@@ -1,6 +1,9 @@
 # TextFilter
-![License](https://img.shields.io/github/license/cframe1337/TextFilter) ![GitHub Repo stars](https://img.shields.io/github/stars/cframe1337/TextFilter)
-![Repository Size](https://img.shields.io/github/repo-size/cframe1337/TextFilter) ![GitHub last commit](https://img.shields.io/github/last-commit/cframe1337/TextFilter)
+![License](https://img.shields.io/github/license/cframe1337/TextFilter)
+![GitHub Repo stars](https://img.shields.io/github/stars/cframe1337/TextFilter)
+![Repository Size](https://img.shields.io/github/repo-size/cframe1337/TextFilter)
+![GitHub last commit](https://img.shields.io/github/last-commit/cframe1337/TextFilter)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/cframe1337/TextFilter/total)
 
 ### TextFilter - это инструмент для фильтрации и поиска слов в тексте с учетом различных форм транслитерации. Он позволяет конвертировать текст из транслитерации в кириллицу и искать заданные слова в преобразованном тексте.
 
